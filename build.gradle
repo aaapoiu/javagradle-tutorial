@@ -3,7 +3,9 @@ apply plugin: 'application'
 mainClassName = 'com.example.pdfs.ParamPDF'
 
 run {
-    args project.args
+    if (project.hasProperty('args')) {
+        args project.args.split('\\s')
+    }
 }
 
 repositories {
