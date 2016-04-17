@@ -1,7 +1,10 @@
 apply plugin: 'java'
 apply plugin: 'application'
-mainClassName = 'com.example.pdfs.ITextHello'
+mainClassName = 'com.example.pdfs.ParamPDF'
 
+run {
+    args project.args
+}
 
 repositories {
     jcenter()
