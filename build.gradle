@@ -53,6 +53,15 @@ task srcZip(type: Zip) {
     archiveName = "$project.name-sources.zip"
 }
 
+task srcTar(type: Tar) {
+    classifier = 'src'
+    from sourceSets*.allSource
+    destinationDir = file("$buildDir/myZips")
+    archiveName = "$project.name-sources.tar.gz"
+
+    compression = Compression.GZIP
+}
+
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
