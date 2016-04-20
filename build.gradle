@@ -46,6 +46,13 @@ task initJavaFolder(group: 'projectInit') << {
     sourceSets*.resources.srcDirs*.each { it.mkdirs() }
 }
 
+task srcZip(type: Zip) {
+    classifier = 'src'
+    from sourceSets*.allSource
+    destinationDir = file("$buildDir/myZips")
+    archiveName = "$project.name-sources.zip"
+}
+
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
