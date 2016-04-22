@@ -69,10 +69,10 @@ set CMD_LINE_ARGS=%$
 :execute
 @rem Setup the command line
 
-set CLASSPATH=%APP_HOME%\lib\javagradle.jar;%APP_HOME%\lib\slf4j-api-1.7.14.jar;%APP_HOME%\lib\itextpdf-5.5.9.jar
+set CLASSPATH=%APP_HOME%\lib\javagradle-1.1-SNAPSHOT.jar;%APP_HOME%\lib\slf4j-api-1.7.14.jar;%APP_HOME%\lib\itextpdf-5.5.9.jar
 
 @rem Execute javagradle
-"%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %JAVAGRADLE_OPTS%  -classpath "%CLASSPATH%" com.example.pdfs.ITextHello %CMD_LINE_ARGS%
+"%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %JAVAGRADLE_OPTS%  -classpath "%CLASSPATH%" com.example.pdfs.ParamPDF %CMD_LINE_ARGS%
 
 :end
 @rem End local scope for the variables with windows NT shell

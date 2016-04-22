@@ -1,5 +1,14 @@
 apply plugin: 'java'
 apply plugin: 'application'
+apply plugin: 'maven'
+apply plugin: 'war' // root/src/main/webapp/WEB-INF,web.xml
+apply plugin: 'eclipse'
+apply plugin: 'eclipse-wtp'
+
+group= 'com.example'
+version= '1.1-SNAPSHOT'
+
+
 mainClassName = 'com.example.pdfs.ParamPDF'
 
 run {
@@ -25,8 +34,22 @@ jar {
 }
 
 repositories {
-    jcenter()
+    //jcenter()
+    mavenCentral()
 }
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            mavenLocal()
+            pom.version = '1.0-SNAPSHOT'
+            pom.artifactId = 'hyo-example-gradle'
+        }  
+    
+    }
+}
+
+
 
 buildDir = 'build'
 
