@@ -43,7 +43,7 @@ uploadArchives {
         mavenDeployer {
             mavenLocal()
             pom.version = '1.0-SNAPSHOT'
-            pom.artifactId = 'hyo-example-gradle'
+            pom.artifactId = 'hyo-example-gradle' //project name이 artifact id로 자동으로 셋팅되나?
         }  
     
     }
